@@ -1,4 +1,5 @@
 SyncPlay
+
 Problem
 Gaming groups waste 30 to 45 minutes of every scheduled session arguing, cross-referencing, and guessing what multiplayer or co-op games everyone owns, has installed, and wants to play. This causes unnecessary pre-game friction, delays, and administrative overhead.
 
