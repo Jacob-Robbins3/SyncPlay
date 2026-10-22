@@ -131,7 +131,6 @@ Project Structure
 syncplay/
 
 ├── app/
-
 │   ├── static/          # CSS stylesheets and images
 │   ├── templates/       # HTML files rendered via Jinja2
 │   │   ├── base.html    # Master layout template
