@@ -129,19 +129,23 @@ pytest
 Project Structure
 
 syncplay/
+
 ├── app/
-│   ├── auth/            # Steam OpenID authentication and session handling
-│   ├── lobbies/         # Lobby management, creation, and member handling
-│   ├── matchmaker/      # Multi-way library intersection algorithms and filtering
-│   ├── voting/          # Real-time polling, shortlisting, and voting dashboard
-│   ├── static/          # CSS assets and frontend branding
-│   ├── templates/       # Jinja templates and dashboard views
-│   ├── forms.py         # WTForms definitions and validation
-│   ├── models.py        # User, Lobby, LobbyMember, and GameVote models
-│   └── extensions.py    # Flask extensions setup
-├── tests/               # Automated unit and integration tests
-├── config.py            # Application configuration profiles
-├── requirements.txt     # Python backend dependencies
+
+│   ├── static/          # CSS stylesheets and images
+│   ├── templates/       # HTML files rendered via Jinja2
+│   │   ├── base.html    # Master layout template
+│   │   ├── index.html   # Landing page
+│   │   ├── dashboard.html # User lobby & library view
+│   │   └── lobby.html   # Active multi-user intersection view
+│   ├── auth/            # Steam OpenID authentication routes
+│   ├── lobbies/         # Lobby creation and member routing
+│   ├── forms.py         # WTForms definitions
+│   ├── models.py        # SQLAlchemy database models
+│   └── __init__.py      # Flask app factory
+├── tests/               # Pytest automated test suite
+├── config.py            # App configurations
+├── requirements.txt     # Python dependencies
 └── run.py               # Application entry point
 
 Roadmap
