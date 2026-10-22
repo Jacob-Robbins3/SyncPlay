@@ -1,1 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Your Lobbies</h2>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+    <div class="card">
+        <h3>Create Lobby</h3>
+        <form action="{{ url_for('lobbies.create') }}" method="POST">
+            {{ create_form.hidden_tag() }}
+            {{ create_form.submit(class="btn", style="margin-top: 1rem;") }}
+        </form>
+    </div>
+    <div class="card">
+        <h3>Join Lobby</h3>
+        <form action="{{ url_for('lobbies.dashboard') }}" method="POST">
+            {{ join_form.hidden_tag() }}
+            <div style="margin-bottom: 1rem;">
+                {{ join_form.invite_code.label }}<br>
+                {{ join_form.invite_code(style="padding: 0.5rem; width: 100%; background: #0f172a; border: 1px solid #334155; color: #fff; border-radius: 4px;") }}
+            </div>
+            {{ join_form.submit(class="btn") }}
+        </form>
+    </div>
+</div>
 
+<div class="card" style="margin-top: 2rem;">
+    <h3>Active Lobbies</h3>
+    <ul>
+        {% for membership in user_lobbies %}
+            <li><a href="{{ url_for('lobbies.view_lobby', lobby_id=membership.lobby.id) }}" style="color: var(--accent-color);">Lobby #{{ membership.lobby.invite_code }}</a></li>
+        {% else %}
+            <p style="color: var(--text-secondary);">You are not in any active lobbies yet.</p>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
