@@ -1,1 +1,14 @@
-
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+    <h2>Lobby Code: {{ lobby.invite_code }}</h2>
+    <p style="color: var(--text-secondary);">Host ID: {{ lobby.host_id }}</p>
+    
+    <h3>Participants</h3>
+    <ul>
+        {% for member in lobby.members %}
+            <li>User ID: {{ member.user_id }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
