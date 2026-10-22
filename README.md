@@ -1,15 +1,19 @@
 SyncPlay
 
 Problem
+
 Gaming groups waste 30 to 45 minutes of every scheduled session arguing, cross-referencing, and guessing what multiplayer or co-op games everyone owns, has installed, and wants to play. This causes unnecessary pre-game friction, delays, and administrative overhead.
 
 Users
+
 PC gamers with disparate Steam libraries, Discord community organizers/party leaders, casual friend groups, and collegiate eSports or gaming clubs managing multiple concurrent members.
 
 Solution
+
 SyncPlay is a web-based multi-user Steam library matchmaker and game night coordinator built with Flask and React. Users can authenticate securely via Steam OpenID, create or join lobbies, automatically synchronize game libraries, calculate exact multi-way library intersections, filter titles by genre and player count, and vote on game selections in real time through an integrated voting dashboard. Each user's inventory and lobby data remain secure and user-scoped.
 
 Features
+
 Steam OpenID authentication and token handling
 
 Automated Steam Web API integration to fetch owned game inventories (appid, title, playtime)
